@@ -1,4 +1,6 @@
 // There are multiple methods for this problem.
+// Basically this problem is I have to find the total number of the digits
+// eg. 12397 -> There are total 5 numbers in this digit.
 
 #include <iostream>
 using namespace std;
@@ -23,6 +25,11 @@ int recursivemethod(long n)
     return 1 + recursivemethod(n / 10);
 }
 
+int logarithmicmethod(long n)
+{
+    return floor(log10(n) + 1);
+}
+
 int main()
 {
     int n;
@@ -33,4 +40,6 @@ int main()
     cout << iterativemethod(n) << endl;
 
     cout << recursivemethod(n) << endl;
+
+    cout << logarithmicmethod(n) << endl;
 }
