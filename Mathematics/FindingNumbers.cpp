@@ -24,6 +24,7 @@ int recursivemethod(long n)
     }
     return 1 + recursivemethod(n / 10);
 }
+// Always follow the stacks, otherwise it become so much confusing on paper.
 
 int logarithmicmethod(long n)
 {
