@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Always follow stack method on paper for recursive solutions. Because it always gives proper explanations and understanding.
+// ------->>>>> Always have the habit of calculating time complexity (TC) at the end of the program.
 // recursive solution
 int factorial_Recur(int n)
 {
@@ -22,6 +24,8 @@ int factorial_Recur(int n)
     else
     {
         return n * factorial_Recur(n - 1);
+        // TC -> TC(N) = TC(n-1) + theta(1); overrall it is O(n);
+        // Auxiliary space of this method is N;
     }
 }
 
@@ -33,8 +37,10 @@ int factorial_IT(int n)
     {
         fact = fact * i;
     }
-
     return fact;
+
+    // TC of this method is O(n) and Auxiliary space is 1;
+    // Here this method consider better because space is less.
 }
 
 int main()
