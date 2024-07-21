@@ -1,43 +1,32 @@
 #include <iostream>
 using namespace std;
 
-// bool palindrom()
-// {
-//     int n;
-//     int n1;
-//     while (n != 0)
-//     {
-//         n1 = n / 10;
-//     }
-//     if (n1 == n)
-//     {
-//         return true;
-//     }
-//     else
-//     {
-//         return false;
-//     }
-// }
+bool plaindrom(int n)
+{
+    int temp = n;
+    int reverse = 0;
+    while (temp != 0)
+    {
+        int ld = temp % 10;
+        reverse = reverse * 10 + ld;
+        temp = temp / 10;
+    }
+
+    if (reverse == n)
+    {
+        return true; // true = 1;
+    }
+    else
+    {
+        return false; // false = 0;
+    }
+}
 
 int main()
 {
     int n;
-    cout << "Enter n: ";
     cin >> n;
-    int n1;
 
-    while (n != 0)
-    {
-        n = n / 10;
-        n1 = n / 10;
-    }
-    if (n1 == n)
-    {
-        cout << true;
-    }
-    else
-    {
-        cout << false;
-    }
+    cout << plaindrom(n) << endl;
     return 0;
 }
