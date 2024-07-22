@@ -2,37 +2,56 @@
 #include <iostream>
 using namespace std;
 
-long long factorial(long long n)
+// This method has O(n) time limit as well as if we use n=20 then is gives -ve value due to long numbers(Overflow issues) even if we use long long data type.
+// There is more efficient method below.
+int trailing_zeros(int n)
 {
-    long long fact = n;
-    for (long long i = 1; i < n; i++)
+    int fact = n;
+    for (int i = 1; i < n; i++)
     {
         fact = fact * i;
     }
 
-    cout << "Fact:" << fact << endl;
+    cout << "Factorial:" << fact << endl;
 
-    long long count = 0;
-    long long temp = fact;
+    int count = 0;
 
-    while (temp != 0)
+    while (fact != 0)
     {
-        long long ld = temp % 10;
-        temp = temp / 10;
+        int ld = fact % 10;
+        fact = fact / 10;
         if (ld == 0)
         {
             count++;
         }
+    }
+    cout << "Counted 0s: ";
+    return count;
+}
+
+// Efficient method with less time and appropriate for all numbers. (Doesnt overflow and yet still gives answers)
+int countZreos(int n)
+{
+    int count = 0;
+
+    for (int i = 5; i <= n; i = i * 5)
+    {
+        count = count + n / i;
     }
     return count;
 }
 
 int main()
 {
-    long long n;
+    int n;
     cout << "Enter n: ";
     cin >> n;
+    cout << endl;
+    cout << "Limited method:" << endl;
+    cout << trailing_zeros(n) << endl;
+    cout << endl;
 
-    cout << factorial(n) << endl;
+    cout << "Efficient method(Counted 0s): " << countZreos(n) << endl;
+    cout << endl;
     return 0;
 }
