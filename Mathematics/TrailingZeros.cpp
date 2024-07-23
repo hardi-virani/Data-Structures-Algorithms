@@ -30,6 +30,7 @@ int trailing_zeros(int n)
 }
 
 // Efficient method with less time and appropriate for all numbers. (Doesnt overflow and yet still gives answers)
+// Should understand the method of this because it might help in future thinking.
 int countZreos(int n)
 {
     int count = 0;
