@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// This function is written by myself.(Might not be optimized code but the logic behind this is mine).
+// Optimised code is given below which might be best in terms of less code and both the complexities.(This code will be from the DSA course(GFG course) from which i am learning DSA)
 int GCD(int n, int m)
 {
     int temp = 0;
@@ -29,6 +31,10 @@ int GCD(int n, int m)
                 break;
             }
         }
+    }
+    else
+    {
+        return n;
     }
     return temp;
 }
