@@ -4,8 +4,8 @@
 #include <iostream>
 using namespace std;
 
+// Optimised code is given below of this function which might be best in terms of less code and both the complexities.(This code will be from the DSA course(GFG course) from which i am learning DSA)
 // This function is written by myself.(Might not be optimized code but the logic behind this is mine).
-// Optimised code is given below which might be best in terms of less code and both the complexities.(This code will be from the DSA course(GFG course) from which i am learning DSA)
 int GCD(int n, int m)
 {
     int temp = 0;
@@ -57,6 +57,23 @@ int GCD2(int a, int b)
     return result;
 }
 
+// Euclidean Algorithm (MOST OPTIMISED CODE)
+int GCD3(int a, int b)
+{
+    while (a != b)
+    {
+        if (a > b)
+        {
+            a = a - b;
+        }
+        else
+        {
+            b = b - a;
+        }
+    }
+    return a;
+}
+
 int main()
 {
     int n;
@@ -68,6 +85,8 @@ int main()
 
     cout << "GCD: " << GCD(n, m) << endl;
 
-    cout << "GCD2:" << GCD2(n, m) << endl;
+    cout << "GCD2: " << GCD2(n, m) << endl;
+
+    cout << "Euclidean Algorithm: " << GCD3(n, m) << endl;
     return 0;
 }
