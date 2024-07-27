@@ -1,3 +1,6 @@
+// My Learnings : Always try all the cases. For example in this case i tried all even and odd numbers of possible pair and then came up with an idea of minimum and maximum number. Thou i didn't tried to take minimum number first because i was stuck with the perspective of writing this program with max number.
+// Another basic learning would be : If the problem is solved then try to make it more optimised than the written code rather then direct jumping for moving forward.
+
 #include <iostream>
 using namespace std;
 
