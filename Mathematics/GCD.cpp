@@ -83,7 +83,11 @@ int GCD4(int a, int b)
     }
     else
     {
-        return GCD4(b, a % b);
+        return GCD4(b, a % b); // we used mod because we wanted smaller number than b to get the answer for GCD. So the remainder of b and a will not be greater than b.
+        // if a>b then mod of a and b(a%b) will be a.
+        // eg: a=5 and b=3 than 5%3=5
+        // so if a>b than the function will be going to swap.
+        // if a=15 and b=12 than GCD4(15,12); and in next itteration it will be GCD4(12, 15);
     }
 }
 
