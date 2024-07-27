@@ -1,6 +1,6 @@
 // My Learnings : Always try all the cases. For example in this case i tried all even and odd numbers of possible pair and then came up with an idea of minimum and maximum number. Thou i didn't tried to take minimum number first because i was stuck with the perspective of writing this program with max number.
 // Another basic learning would be : If the problem is solved then try to make it more optimised than the written code rather then direct jumping for moving forward.
-// J motu che e chelle nanu to thai j che ne...!!! Be careful while tackling the problem.
+// J motu(number) che e chelle nanu(number) to thai j che ne...!!! Be careful while tackling the problem.
 #include <iostream>
 using namespace std;
 
@@ -74,6 +74,19 @@ int GCD3(int a, int b)
     return a;
 }
 
+// Optimised implementation of Euclidean algorithm(Recursive)
+int GCD4(int a, int b)
+{
+    if (b == 0)
+    {
+        return a;
+    }
+    else
+    {
+        return GCD4(b, a % b);
+    }
+}
+
 int main()
 {
     int n;
@@ -88,5 +101,8 @@ int main()
     cout << "GCD2: " << GCD2(n, m) << endl;
 
     cout << "Euclidean Algorithm: " << GCD3(n, m) << endl;
+
+    cout << "Recursive Euclidean: " << GCD4(n, m) << endl;
+
     return 0;
 }
