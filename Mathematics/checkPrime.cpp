@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// initial code by myself
 bool isPrime(int n)
 {
     int count = 0;
@@ -13,17 +14,45 @@ bool isPrime(int n)
                 count++;
             }
         }
-        if (count > 2)
+        if (count == 2)
         {
-            // cout << "Not prime";
-            return false; // 0
+            return true; // 1
         }
-        return true; // 1
     }
     else if (n == 2)
     {
-        // cout << "Not prime";
         return true;
+    }
+    return false; // 0
+}
+
+// optimised code
+bool primechecking(int n)
+{
+    int count = 0;
+    int i = n;
+    if (n <= 1)
+    {
+        return false;
+    }
+    else if (n == 2)
+    {
+        return true;
+    }
+    else
+    {
+        while (i >= 0)
+        {
+            if (n % i == 0)
+            {
+                count++;
+            }
+            i--;
+        }
+        if (count == 2)
+        {
+            return true;
+        }
     }
     return false;
 }
@@ -34,14 +63,16 @@ int main()
     cout << "Enter n: ";
     cin >> n;
     int value = isPrime(n);
+
     if (value == 1)
     {
-        cout << "Prime Number" << endl;
+        cout << "Prime Number: 1" << endl;
     }
     else if (value == 0)
     {
-        cout << "Not Prime Number" << endl;
+        cout << "Not Prime Number: 0" << endl;
     }
-    // cout << isPrime(n) << endl;
+
+    cout << primechecking(n) << endl;
     return 0;
 }
