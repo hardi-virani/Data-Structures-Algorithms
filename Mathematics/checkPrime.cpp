@@ -27,35 +27,6 @@ bool isPrime(int n)
 }
 
 // optimised code
-bool primechecking(int n)
-{
-    int count = 0;
-    int i = n;
-    if (n <= 1)
-    {
-        return false;
-    }
-    else if (n == 2)
-    {
-        return true;
-    }
-    else
-    {
-        while (i >= 0)
-        {
-            if (n % i == 0)
-            {
-                count++;
-            }
-            i--;
-        }
-        if (count == 2)
-        {
-            return true;
-        }
-    }
-    return false;
-}
 
 int main()
 {
@@ -73,6 +44,5 @@ int main()
         cout << "Not Prime Number: 0" << endl;
     }
 
-    cout << primechecking(n) << endl;
     return 0;
 }
