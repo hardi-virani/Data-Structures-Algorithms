@@ -68,6 +68,23 @@ bool checkingPrime(int n)
     return false;
 }
 
+// This is the efficient code from GFG which has O(root(n)) Time complexicity.
+bool primecheck_GFG(int n)
+{
+    if (n == 1)
+    {
+        return false;
+    }
+    for (int i = 2; i * i <= n; i++)
+    {
+        if (n % i == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 int main()
 {
     int n;
@@ -86,6 +103,7 @@ int main()
 
     cout << primechecking(n) << endl;
     cout << checkingPrime(n) << endl;
+    cout << primecheck_GFG(n) << endl;
 
     return 0;
 }
