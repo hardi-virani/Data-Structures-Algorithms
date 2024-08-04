@@ -44,6 +44,7 @@ bool primechecking(int n)
     return true;
 }
 
+// Does not work with such numbers like 15, 21 and many more. Though at some point my logic was quite correct.
 bool checkingPrime(int n)
 {
     if (n == 1)
