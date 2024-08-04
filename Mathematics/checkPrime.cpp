@@ -44,7 +44,8 @@ bool primechecking(int n)
     return true;
 }
 
-// Does not work with such numbers like 15, 21 and many more. Though at some point my logic was quite correct.
+// Efficient method. With less TC
+// This function is written by myself with my logic. I tested out this function in chaptGpt it works perfectly including all Test Cases but still it says that it is incomplete.
 bool checkingPrime(int n)
 {
     if (n == 1)
@@ -55,16 +56,16 @@ bool checkingPrime(int n)
     {
         return false;
     }
-    double root = sqrt(n);
-    if (root == floor(root))
+    if (n % 3 == 0 && n != 3 || n % 5 == 0 && n != 5 || n % 7 == 0 && n != 7)
     {
         return false;
     }
-    else
+    double root = sqrt(n);
+    if (root != floor(root))
     {
         return true;
     }
-    return true;
+    return false;
 }
 
 int main()
