@@ -85,6 +85,30 @@ bool primecheck_GFG(int n)
     return true;
 }
 
+// or the better option is this. from GFG .
+bool primechecking_GFG(int n)
+{
+    if (n == 1)
+    {
+        return false;
+    }
+    if (n % 2 == 0 || n % 3 == 0)
+    {
+        return false;
+    }
+    if (n == 2 || n == 3)
+    {
+        return true;
+    }
+    for (int i = 5; i * i <= n; i++)
+    {
+        if (n % i == 0 || n % (i + 2) == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
 int main()
 {
     int n;
