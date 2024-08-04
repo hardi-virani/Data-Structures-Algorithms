@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 // initial code by myself
@@ -26,7 +27,7 @@ bool isPrime(int n)
     return false; // 0
 }
 
-// optimised code //naive method
+// naive method //modified version of the previous function.
 bool primechecking(int n)
 {
     if (n == 1)
@@ -39,6 +40,28 @@ bool primechecking(int n)
         {
             return false;
         }
+    }
+    return true;
+}
+
+bool checkingPrime(int n)
+{
+    if (n == 1)
+    {
+        return false;
+    }
+    else if (n > 2 && n % 2 == 0)
+    {
+        return false;
+    }
+    double root = sqrt(n);
+    if (root == floor(root))
+    {
+        return false;
+    }
+    else
+    {
+        return true;
     }
     return true;
 }
@@ -60,6 +83,7 @@ int main()
     }
 
     cout << primechecking(n) << endl;
+    cout << checkingPrime(n) << endl;
 
     return 0;
 }
