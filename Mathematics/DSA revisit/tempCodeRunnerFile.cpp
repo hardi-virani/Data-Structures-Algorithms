@@ -1,4 +1,1 @@
-hile(temp==0)
-    // {
-
-    // }
+count
