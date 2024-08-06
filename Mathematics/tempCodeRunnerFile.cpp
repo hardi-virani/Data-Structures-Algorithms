@@ -1,4 +1,4 @@
- // if (root != floor(root))
-    // {
-    //     return true;
-    // }
+if (i == 1)
+            // {
+            //     continue;
+            // }
