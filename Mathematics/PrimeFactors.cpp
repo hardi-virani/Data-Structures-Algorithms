@@ -2,6 +2,9 @@
 #include <cmath>
 using namespace std;
 
+// coudn't wrote my own method it was lacking something.
+// Always think from broader perscecptive of the problems and small from numbers. Like powers, roots in numbers and broader means that how one loop or something like that can solve the whole problems. without including multiple rules at once.
+
 int isprime(int N)
 {
     if (N < 2 || (!(N & 1) && N != 2))
