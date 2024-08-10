@@ -16,7 +16,7 @@ int isprime(int N)
     }
     return 1;
 }
-// This function is not written by me.
+// This function is not written by me. (GFG's)
 // The TC of this function is O(n*n log n).
 void primfactors(int n)
 {
@@ -39,7 +39,7 @@ void primfactors(int n)
     }
 }
 
-// My Optimized solution (Written by me) O(n*n)
+// My Optimized solution (Written by me) O(n*n logn)
 void primefactors2(int n)
 {
     if (n <= 1)
@@ -74,7 +74,7 @@ void primefactors2(int n)
     }
 }
 
-// Optimized method GFG
+// Optimized method GFG O(√n log n)
 void primefactor3(int n)
 {
     if (n <= 1)
