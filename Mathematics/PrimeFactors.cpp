@@ -39,9 +39,13 @@ void primfactors(int n)
     }
 }
 
-// My Optimized solution (Written by me)
+// My Optimized solution (Written by me) O(n*n)
 void primefactors2(int n)
 {
+    if (n <= 1)
+    {
+        cout << 0;
+    }
     if (isprime(n))
     {
         cout << (n) << endl;
@@ -70,9 +74,31 @@ void primefactors2(int n)
     }
 }
 
+// Optimized method GFG
+void primefactor3(int n)
+{
+    if (n <= 1)
+    {
+        cout << 0;
+    }
+    for (int i = 2; i * i <= n; i++)
+    {
+        while (n % i == 0)
+        {
+            cout << i << " ";
+            n = n / i;
+        }
+    }
+    if (n > 1)
+    {
+        cout << n;
+    }
+}
+
 int main()
 {
     int n;
+    cout << "Enter n: ";
     cin >> n;
 
     // cout << "Naive method: ";
@@ -81,6 +107,10 @@ int main()
 
     // cout << "Optimized method: ";
     primefactors2(n);
+    cout << endl;
+
+    // cout<<"Optimized GFG method: ";
+    primefactor3(n);
     cout << endl;
     return 0;
 }
