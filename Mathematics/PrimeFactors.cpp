@@ -16,9 +16,14 @@ int isprime(int N)
     }
     return 1;
 }
-
+// This function is not written by me.
+// The TC of this function is O(n*n log n).
 void primfactors(int n)
 {
+    if (isprime(n))
+    {
+        cout << (n);
+    }
 
     for (int i = 2; i < n; i++)
     {
@@ -27,8 +32,39 @@ void primfactors(int n)
             int x = i;
             while (n % x == 0)
             {
-                cout << (i) << endl;
+                cout << (i) << " ";
                 x = x * i;
+            }
+        }
+    }
+}
+
+// My Optimized solution (Written by me)
+void primefactors2(int n)
+{
+    if (isprime(n))
+    {
+        cout << (n) << endl;
+    }
+    for (int i = 2; i < n; i++)
+    {
+        if (n % i == 0)
+        {
+            if (isprime(i))
+            {
+                for (int j = 2; j < n; j++)
+                {
+                    int powers = pow(i, j);
+                    if (n % powers == 0)
+                    {
+                        cout << i << " ";
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                cout << i << " ";
             }
         }
     }
@@ -39,6 +75,12 @@ int main()
     int n;
     cin >> n;
 
+    // cout << "Naive method: ";
     primfactors(n);
+    cout << endl;
+
+    // cout << "Optimized method: ";
+    primefactors2(n);
+    cout << endl;
     return 0;
 }
