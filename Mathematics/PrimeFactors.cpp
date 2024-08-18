@@ -95,38 +95,40 @@ void primefactor3(int n)
     }
 }
 
-// Futher optimized Method to Reduce the itteration
+// Futher(Perfectly) optimized Method to Reduce the itteration
 void primefactor4(int n)
 {
     if (n <= 1)
     {
-        cout << 0;
+        return;
     }
-    for (int i = 2; i * i <= n; i++)
+    while (n % 2 == 0)
+    {
+        cout << 2 << " ";
+        n = n / 2;
+    }
+    while (n % 3 == 0)
+    {
+        cout << 3 << " ";
+        n = n / 3;
+    }
+    for (int i = 5; i * i <= n; i = i + 6)
     {
         while (n % i == 0)
         {
-            if (i % 2 == 0)
-            {
-                cout << 2 << " ";
-                n = n / i;
-            }
-            else if (i % 3 == 0)
-            {
-                cout << 3 << " ";
-                n = n / i;
-            }
-            else
-            {
-                cout << i << " ";
-                i = i + 2;
-            }
+            cout << i << " ";
+            n = n / i;
+        }
+        while (n % (i + 2) == 0)
+        {
+            cout << (i + 2) << " ";
+            n = n / (i + 2);
         }
     }
-    // if (n > 1)
-    // {
-    //     cout << n;
-    // }
+    if (n > 3)
+    {
+        cout << n << " ";
+    }
 }
 
 int main()
