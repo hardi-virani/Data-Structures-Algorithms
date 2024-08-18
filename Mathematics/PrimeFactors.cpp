@@ -95,6 +95,40 @@ void primefactor3(int n)
     }
 }
 
+// Futher optimized Method to Reduce the itteration
+void primefactor4(int n)
+{
+    if (n <= 1)
+    {
+        cout << 0;
+    }
+    for (int i = 2; i * i <= n; i++)
+    {
+        while (n % i == 0)
+        {
+            if (i % 2 == 0)
+            {
+                cout << 2 << " ";
+                n = n / i;
+            }
+            else if (i % 3 == 0)
+            {
+                cout << 3 << " ";
+                n = n / i;
+            }
+            else
+            {
+                cout << i << " ";
+                i = i + 2;
+            }
+        }
+    }
+    // if (n > 1)
+    // {
+    //     cout << n;
+    // }
+}
+
 int main()
 {
     int n;
@@ -111,6 +145,10 @@ int main()
 
     // cout<<"Optimized GFG method: ";
     primefactor3(n);
+    cout << endl;
+
+    // cout<<"Further optimized method: ";
+    primefactor4(n);
     cout << endl;
     return 0;
 }
