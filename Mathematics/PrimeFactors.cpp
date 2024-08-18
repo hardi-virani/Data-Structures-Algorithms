@@ -96,6 +96,7 @@ void primefactor3(int n)
 }
 
 // Futher(Perfectly) optimized Method to Reduce the itteration
+// TC of this function is 𝛳(√n)
 void primefactor4(int n)
 {
     if (n <= 1)
