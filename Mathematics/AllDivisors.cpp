@@ -13,10 +13,25 @@ void all_Divisors(int n)
     }
 }
 
-// Efficient method
+// Efficient method Output: Inorder
+void Divisors1(int n)
+{
+    for (int i = 1; i * i <= n; i++)
+    {
+        if (n % i == 0)
+        {
+            cout << i << " ";
+            if (i != n / i)
+            {
+                cout << n / i << " ";
+            }
+        }
+    }
+}
+
+// Efficient method Output: Order
 void Divisor(int n)
 {
-
     for (int i = n; i * i >= 1; i--)
     {
         if (n % i == 0)
@@ -37,6 +52,10 @@ int main()
 
     all_Divisors(n);
     cout << endl;
+
     Divisor(n);
+    cout << endl;
+
+    Divisors1(n);
     return 0;
 }
