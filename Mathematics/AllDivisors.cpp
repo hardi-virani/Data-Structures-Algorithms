@@ -17,11 +17,10 @@ void all_Divisors(int n)
 void Divisor(int n)
 {
 
-    for (int i = 1; i * i <= n; i++)
+    for (int i = n; i * i >= 1; i--)
     {
         if (n % i == 0)
         {
-            cout << i << " ";
             if (i != n / i)
             {
                 cout << n / i << " ";
