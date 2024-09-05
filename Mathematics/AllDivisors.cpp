@@ -32,11 +32,20 @@ void Divisors1(int n)
 // Efficient method Output: Order
 void Divisor(int n)
 {
-    for (int i = n; i * i >= 1; i--)
+    int i;
+    for (i = 1; i * i <= n; i++) // Initialize i in the first loop
     {
         if (n % i == 0)
         {
-            if (i != n / i)
+            cout << i << " ";
+        }
+    }
+    i--;                // Decrement i because the first loop will increment it one extra time
+    for (; i >= 1; i--) // Start the second loop from the current value of i
+    {
+        if (n % i == 0)
+        {
+            if (i != n / i) // Ensure you don't print the same divisor twice
             {
                 cout << n / i << " ";
             }
