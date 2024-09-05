@@ -2,16 +2,32 @@
 using namespace std;
 
 // Naive method
-int all_Divisors(int n)
+void all_Divisors(int n)
 {
-    for (int i = 1; i < n; i++)
+    for (int i = 1; i <= n; i++)
     {
         if (n % i == 0)
         {
             cout << i << " ";
         }
     }
-    return n;
+}
+
+// Efficient method
+void Divisor(int n)
+{
+
+    for (int i = 1; i * i <= n; i++)
+    {
+        if (n % i == 0)
+        {
+            cout << i << " ";
+            if (i != n / i)
+            {
+                cout << n / i << " ";
+            }
+        }
+    }
 }
 
 int main()
@@ -20,6 +36,8 @@ int main()
     cout << "Enter n: ";
     cin >> n;
 
-    cout << all_Divisors(n) << " " << endl;
+    all_Divisors(n);
+    cout << endl;
+    Divisor(n);
     return 0;
 }
