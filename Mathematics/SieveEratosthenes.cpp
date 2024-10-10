@@ -13,7 +13,7 @@ int isprime(int N)
     return 1;
 }
 
-// Naive Method
+// Naive Method TC: O(n*√n)
 void Eratos(int n)
 {
     for (int i = 2; i <= n; i++)
